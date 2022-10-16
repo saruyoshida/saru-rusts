@@ -1,5 +1,5 @@
 target/
 debug/
-Carge.lock
+Cargo.lock
 .DS_Store
 EOF
