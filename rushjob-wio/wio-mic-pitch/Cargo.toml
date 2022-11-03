@@ -1,0 +1,20 @@
+[package]
+authors = ["sinbeshare"]
+name = "wio-mic-pitch"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+wio_terminal = "0.4"
+panic-halt = "0.2"
+cortex-m = "0.6.4"
+cortex-m-rt = "0.6.13"
+embedded-graphics = "0.7.1"
+heapless = "0.5.6"
+micromath = "1.1.0"
+wio_fft = {"path" = "../wio_fft"}
+wio_term = {"path" = "../wio_term"}
+
+[[example]]
+name = "wio-mic-pitch"
+

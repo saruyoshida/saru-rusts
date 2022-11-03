@@ -1,0 +1,13 @@
+[package]
+authors = ["sinbeshare"]
+name = "wio_fft"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+panic-halt = "0.2"
+heapless = "0.5.6"
+microfft = "0.3.1"
+micromath = "2.0.0"
+wio_biquad = {"path" = "../wio_biquad"}
+
