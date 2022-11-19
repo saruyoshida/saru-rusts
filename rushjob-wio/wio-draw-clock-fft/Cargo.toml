@@ -1,0 +1,65 @@
+[package]
+name = "wio-clock-fft"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wio_terminal = "0.4"
+bitfield = "0.13"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+display-interface-spi = "0.4"
+heapless = "0.5"
+ili9341 = "0.5.0"
+lis3dh = "0.3.0"
+embedded-sdmmc = "0.3.0"
+usb-device = { version = "0.2", optional = true }
+bbqueue = { version = "^0.4.11", optional = true }
+generic-array = { version = "0.14", optional = true }
+seeed-erpc = { version = "0.1.1", optional = true }
+# micromath  = "2.0.0"
+
+[dependencies.atsamd-hal]
+version = "0.13"
+default-features = false
+
+[dev-dependencies]
+usbd-serial = "0.1"
+embedded-graphics = "0.7.1"
+panic-halt = "0.2"
+# nom = { version = "^6.0", default-features = false }
+wio_clock = {"path" = "../wio_clock_silent"}
+wio_buttons = {"path" = "../wio_buttons"}
+wio_toast = {"path" = "../wio_toast"}
+wio_fft = {"path" = "../wio_fft"}
+wio_fftbutton = {"path" = "../wio_fftbutton"}
+
+[features]
+default = ["atsamd-hal/samd51p", "rt", "unproven", "usb", "wifi"]
+rt = ["atsamd-hal/samd51p-rt", "cortex-m-rt"]
+unproven = ["atsamd-hal/unproven"]
+usb = ["atsamd-hal/usb", "usb-device"]
+# enable feature for RTL8720 firmware older than 2.1.2
+wifi-fw-before-212 = []
+wifi = ["bbqueue", "generic-array", "seeed-erpc"]
+
+[profile.dev]
+incremental = false
+codegen-units = 1
+debug = true
+lto = true
+
+[profile.release]
+lto = true
+opt-level = "s"
+
+# for cargo flash
+[package.metadata]
+chip = "ATSAMD51P19A"
+
+[[example]]
+name = "wio-draw-clock-fft"
+# required-features = ["usb"]
+
