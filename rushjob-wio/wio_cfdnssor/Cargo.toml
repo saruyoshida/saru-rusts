@@ -1,0 +1,12 @@
+[package]
+authors = ["sinbeshare"]
+name = "wio_cfdnssor"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+nalgebra = { version = "0.31.2", default-features = false }
+embedded-graphics = "0.7.1"
+heapless = "0.7.16"
+oorandom = "11.1.3"
+
