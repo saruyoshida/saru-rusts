@@ -9,7 +9,6 @@ use embedded_graphics::{
 };
 
 use micromath::F32Ext;
-
 use heapless::consts::*;
 use heapless::Vec;
 
@@ -252,3 +251,12 @@ impl Drawable for WioElliptClock
   }
 }            
     
+// 追加
+impl WioElliptClock {
+  pub fn as_mut_points(&mut self) 
+    -> &mut [Point] 
+  {
+    &mut self.poly_cur
+  }
+}
+//

@@ -1,0 +1,10 @@
+[package]
+authors = ["saruyoshida"]
+name = "wio_sbbutton"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+wio_sbeye = {"path" = "../wio_sbeye"}
+

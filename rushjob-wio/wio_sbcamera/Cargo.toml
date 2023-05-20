@@ -1,0 +1,10 @@
+[package]
+authors = ["saruyoshida"]
+name = "wio_sbcamera"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+nalgebra = { version = "0.31.2", default-features = false, features  =   [  "libm" ]}
+embedded-graphics = "0.7.1"
+
