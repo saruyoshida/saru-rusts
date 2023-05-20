@@ -1,0 +1,10 @@
+[package]
+authors = ["sinbeshare"]
+name = "wio_polywave"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+heapless = "0.5.6"
+embedded-graphics = "0.7.1"
+
