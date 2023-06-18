@@ -1,0 +1,16 @@
+[package]
+name = "robotfilter-debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+heapless = "0.7.16"
+emb_textterm = {"path" = "../../../emb_textterm"}
+emb_bargraph = {"path" = "../../../emb_bargraph"}
+robot_filter = {"path" = "../robot_filter"}
+
+[[example]]
+name = "debug-robotfilter"
+
+
+

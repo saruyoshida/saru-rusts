@@ -1,0 +1,10 @@
+[package]
+authors = ["saruyoshida"]
+name = "dog_filter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+discrete_bayes = {"path" = "../discrete_bayes"}
+
+
