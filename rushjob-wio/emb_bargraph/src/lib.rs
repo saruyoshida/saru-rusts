@@ -97,6 +97,8 @@ pub struct EmbBargraph<'a> {
   scale_start   : Point,     // 目盛原点
   bar_width     : i32,       // バー幅
   x_scale_start : i32,       // X目盛開始位置
+  draw_area     : Rectangle, // draw領域
+  correct_rate  : (f32, f32),// 補正率
   correct_shift : (f32, f32),// 位置シフ(x,y)
   correct_fact  : (f32, f32),// 位置係数(x,y)
   text_style    : MonoTextStyle<'a, Rgb565>,
@@ -189,9 +191,31 @@ impl<'a> EmbBargraph<'a> {
         .font(&FONT_6X12)
         .text_color(text_color)
         .build();
-
+    // draw領域
+    let draw_area = Rectangle::new(
+      Point::new(
+        scale_start.x + SCAL_THICK + 2,
+        dsp_start.y   + BOX_THICK,
+      ), 
+      Size::new(
+        (
+          dsp_start.x           +
+          dsp_size.width as i32 -
+          scale_start.x         - 
+          SCAL_THICK - 2             -
+          BOX_THICK
+        ) as u32,
+        (
+          scale_start.y - 
+          dsp_start.y   -
+          SCAL_THICK         - 
+          BOX_THICK
+        ) as u32,
+      ),
+    );
+    // 描画モード初期値
     let draw_mode = DrawMode::AllClear;
-
+    // データ初期値
     let data = (0.0, 0.0);
 
     EmbBargraph {
@@ -203,6 +227,8 @@ impl<'a> EmbBargraph<'a> {
       scale_start,
       bar_width,
       x_scale_start,
+      draw_area,
+      correct_rate,
       correct_shift,
       correct_fact,
       text_style,
@@ -324,15 +350,9 @@ impl<'a> EmbBargraph<'a> {
     );
 
     // バー領域を超える場合、バー高幅を固定
-    if p.y < self.dsp_start.y + BOX_THICK {
-      p.y = self.dsp_start.y + 
-            BOX_THICK;
-      s.height = (
-        self.scale_start.y - 
-        self.dsp_start.y   -
-        SCAL_THICK         -
-        BOX_THICK
-      ) as u32;
+    if p.y < self.draw_area.top_left.y {
+      p.y = self.draw_area.top_left.y;
+      s.height = self.draw_area.size.height;
     }
     // 表示
     Rectangle::new(p, s)
@@ -375,33 +395,13 @@ impl<'a> EmbBargraph<'a> {
       D: DrawTarget<Color = Rgb565>,
   {
     
-    Rectangle::new(
-      Point::new(
-        self.scale_start.x + SCAL_THICK + 2,
-        self.dsp_start.y   + BOX_THICK,
-      ), 
-      Size::new(
-        (
-          self.dsp_start.x           +
-          self.dsp_size.width as i32 -
-          self.scale_start.x         - 
-          SCAL_THICK - 2             -
-          BOX_THICK
-        ) as u32,
-        (
-          self.scale_start.y - 
-          self.dsp_start.y   -
-          SCAL_THICK         - 
-          BOX_THICK
-        ) as u32,
-      ),
-    )
-    .into_styled(
-      PrimitiveStyle::with_fill(
-        self.base_color
-      )
-    )
-    .draw(target)
+    self.draw_area
+        .into_styled(
+          PrimitiveStyle::with_fill(
+            self.base_color
+          )
+        )
+        .draw(target)
   }
 
   // 目盛表示X軸
@@ -565,6 +565,14 @@ impl<'a> EmbBargraph<'a> {
   // X目盛開始位置
   pub fn x_scale_start(&self) -> i32 {
     self.x_scale_start
+  }
+  // draw領域
+  pub fn draw_area(&self) -> Rectangle {
+    self.draw_area.clone()
+  }
+  // 補正率(x,y)
+  pub fn correct_rate(&self) -> (f32, f32) {
+    self.correct_rate
   }
   // 位置シフト(x,y)
   pub fn correct_shift(&self) -> (f32, f32) {

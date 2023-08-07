@@ -166,7 +166,8 @@ impl<'a> EmbTextterm<'a> {
   fn cursor_swap(&mut self)
   {// 予め次の表示位置を計算しておく
     self.cursor = self.cursor_next.clone();
-    let mut cursor = &mut self.cursor_next;
+//    let mut cursor = &mut self.cursor_next;
+    let cursor = &mut self.cursor_next;
     
     for c in self.data.as_str().chars() {
       // x位置がオーバー または 改行
