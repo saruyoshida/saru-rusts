@@ -1,0 +1,51 @@
+[package]
+name = "dogsim-draw"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+micromath = "2.0.0"
+emb_bargraph = {"path" = "../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../emb_shapegraph"}
+emb_linegraph = {"path" = "../../../emb_linegraph"}
+od_kalmanfilter = {"path" = "../od_kalmanfilter"}
+one_dimensional = {"path" = "../one_dimensional"}
+emb_textterm = {"path" = "../../../emb_textterm"}
+emb_gaussgraph = {"path" = "../../../emb_gaussgraph"}
+dogsimulation = {"path" = "../dogsimulation"}
+nonlinersimulation = {"path" = "../nonlinersimulation"}
+
+[[example]]
+name = "draw-dogsim"
+
+[[example]]
+name = "draw-dogsim-rest"
+
+[[example]]
+name = "draw-dogsim-var"
+
+[[example]]
+name = "draw-voltsim"
+
+[[example]]
+name = "draw-dogsim-bigsensornoize"
+
+[[example]]
+name = "draw-dogsim-smallprocessnoize"
+
+[[example]]
+name = "draw-dogsim-wronginit"
+
+[[example]]
+name = "draw-dogsim-bignoize_wronginit"
+
+[[example]]
+name = "draw-dogsim-bignoize_zinit"
+
+[[example]]
+name = "draw-dogsim-nonliner"
+

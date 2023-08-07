@@ -1,0 +1,9 @@
+[package]
+authors = ["saruyoshida"]
+name = "od_kalmanfilter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+one_dimensional = {"path" = "../one_dimensional"}
+
