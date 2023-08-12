@@ -124,7 +124,7 @@ impl EmbGaussgraph {
     self
   }
 
-  pub fn set_rdot_interval(&mut self, c: usize)
+  pub fn set_dot_interval(&mut self, c: usize)
     -> &mut Self {
     self.line_graph.set_dot_interval(c);
     self
