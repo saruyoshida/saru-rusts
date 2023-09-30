@@ -1,0 +1,11 @@
+[package]
+authors = ["saruyoshida"]
+name = "robot2d"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = { version = "0.8.5", default_features = false, features = ["std_rng"] }
+rand_distr = { version = "0.4.3", default_features = false }
+
+

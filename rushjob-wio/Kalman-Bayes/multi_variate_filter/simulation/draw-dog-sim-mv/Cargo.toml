@@ -1,0 +1,23 @@
+[package]
+name = "draw-dog-sim-mv"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+micromath = "2.0.0"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+mv_kalmanfilter = {"path" = "../../mv_kalmanfilter"}
+discrete_white_noise = {"path" = "../../discrete_white_noise"}
+one_dimensional = {"path" = "../../../one_dimensional_filter/one_dimensional"}
+dogsimulation = {"path" = "../../../one_dimensional_filter/dogsimulation"}
+
+[[example]]
+name = "draw-dog-sim-mv"
+
+

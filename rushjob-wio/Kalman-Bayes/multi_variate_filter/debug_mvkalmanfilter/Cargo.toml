@@ -1,0 +1,14 @@
+[package]
+name = "mvkalmanfilter-debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mv_kalmanfilter = {"path" = "../mv_kalmanfilter"}
+discrete_white_noise = {"path" = "../discrete_white_noise"}
+dogsimulation={"path" ="../../one_dimensional_filter/dogsimulation"}
+one_dimensional = {"path" = "../../one_dimensional_filter/one_dimensional"}
+
+[[example]]
+name = "debug_mvkalmanfilter"
+
