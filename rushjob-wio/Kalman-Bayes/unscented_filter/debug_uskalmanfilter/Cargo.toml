@@ -1,0 +1,34 @@
+[package]
+name = "uskalmanfilter-debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nalgebra = { version = "0.32.3", default-features = false, features  =   [  "libm" ]}
+discrete_white_noise = {"path" = "../../multi_variate_filter/discrete_white_noise"}
+dogsimulation={"path" ="../../one_dimensional_filter/dogsimulation"}
+one_dimensional = {"path" = "../../one_dimensional_filter/one_dimensional"}
+us_kalmanfilter = {"path" = "../us_kalmanfilter"}
+ms_sigmapoints = {"path" = "../ms_sigmapoints"}
+us_transform = {"path" = "../us_transform"}
+robot2d = {"path" = "../../multi_variate_filter/simulation/robot2d"}
+radaraccsim = {"path" = "../simulation/radaraccsim"}
+micromath = "2.0.0"
+rand = { version = "0.8.5", default_features = false, features = ["std_rng"] }
+rand_distr = { version = "0.4.3", default_features = false }
+robotukfsim = {"path" = "../simulation/robotukf/robotukfsim"}
+robotukffn = {"path" = "../simulation/robotukf/robotukffn"}
+
+[[example]]
+name = "debug_uskalmanfilter"
+[[example]]
+name = "debug_sigma"
+[[example]]
+name = "debug_radaraccsim"
+[[example]]
+name = "debug-sensor-multiple"
+[[example]]
+name = "debug-self-positioning"
+[[example]]
+name = "debug_atan2"
+

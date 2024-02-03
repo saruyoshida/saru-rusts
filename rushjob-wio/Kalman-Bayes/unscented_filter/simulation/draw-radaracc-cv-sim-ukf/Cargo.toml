@@ -1,0 +1,22 @@
+[package]
+name = "draw-robot-cv-sim-ukf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+micromath = "2.0.0"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+us_kalmanfilter = {"path" = "../../us_kalmanfilter"}
+discrete_white_noise = {"path" = "../../../multi_variate_filter/discrete_white_noise"}
+radaraccsim = {"path" = "../radaraccsim"}
+
+[[example]]
+name = "draw-radaracc-cv-sim-ukf"
+
+
+

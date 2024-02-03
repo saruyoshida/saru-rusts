@@ -1,0 +1,22 @@
+[package]
+name = "draw-robot-sim-ukf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+us_kalmanfilter = {"path" = "../../us_kalmanfilter"}
+mv_kalmanfilter = {"path" = "../../../multi_variate_filter/mv_kalmanfilter"}
+discrete_white_noise = {"path" = "../../../multi_variate_filter/discrete_white_noise"}
+robot2d = {"path" = "../../../multi_variate_filter/simulation/robot2d"}
+
+[[example]]
+name = "draw-robot-sim-ukf"
+
+
+

@@ -1,0 +1,11 @@
+[package]
+authors = ["saruyoshida"]
+name = "us_kalmanfilter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nalgebra = { version = "0.32.3", default-features = false, features  =   [  "libm" ]}
+ms_sigmapoints = {"path" = "../ms_sigmapoints"}
+us_transform = {"path" = "../us_transform"}
+

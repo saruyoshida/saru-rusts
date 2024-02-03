@@ -1,0 +1,27 @@
+[package]
+name = "draw-self-positioning"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+micromath = "2.0.0"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+emb_covargraph = {"path" = "../../../../emb_covargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+us_kalmanfilter = {"path" = "../../us_kalmanfilter"}
+robotukfsim = {"path" = "../robotukf/robotukfsim"}
+robotukffn = {"path" = "../robotukf/robotukffn"}
+
+[[example]]
+name = "draw-self-positioning"
+
+
+
+
+
+
