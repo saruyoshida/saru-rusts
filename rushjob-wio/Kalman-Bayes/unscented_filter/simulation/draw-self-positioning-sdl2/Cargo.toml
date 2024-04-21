@@ -1,0 +1,26 @@
+[package]
+name = "draw-self-positioning-sdl2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+micromath = "2.0.0"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+emb_covargraph = {"path" = "../../../../emb_covargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+us_kalmanfilter = {"path" = "../../us_kalmanfilter"}
+robotukfsim = {"path" = "../robotukf/robotukfsim"}
+robotukffn = {"path" = "../robotukf/robotukffn"}
+
+[[example]]
+name = "draw-self-positioning-sdl2"
+
+
+
+
+
+
+
