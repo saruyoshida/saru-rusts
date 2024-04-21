@@ -1,0 +1,32 @@
+[package]
+name = "draw-particlefilter-sdl2-line"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+
+# シミュレーション設定
+#sim_config = {"path" = "../sims/sim_example_1", package = "sim_example_1"}
+#sim_config = {"path" = "../sims/sim_opening", package = "sim_opening"}
+#sim_config = {"path" = "../sims/sim_robot", package = "sim_robot"}
+sim_config = {"path" = "../sims/sim_ffdtm", package = "sim_ffdtm"}
+
+[[example]]
+name = "draw-particlefilter-sdl2-line"
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+[package]
+name = "particlefilter-debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = { version = "0.8.5", default_features = false, features = ["small_rng"] }
+rand_distr = { version = "0.4.3", default_features = false }
+particlefilter = {"path" = "../particlefilter"}
+#micromath = "2.0.0"
+heapless = "0.8.0"
+
+# シミュレーション設定
+#sim_config = {"path" = "../simulation/sims/sim_example_1", package = "sim_example_1"}
+#sim_config = {"path" = "../simulation/sims/sim_opening", package = "sim_opening"}
+#sim_config = {"path" = "../simulation/sims/sim_robot", package = "sim_robot"}
+sim_config = {"path" = "../simulation/sims/sim_ffdtm", package = "sim_ffdtm"}
+
+#[[example]]
+#name = "debug_particle"
+
+[[example]]
+name = "debug_filter"

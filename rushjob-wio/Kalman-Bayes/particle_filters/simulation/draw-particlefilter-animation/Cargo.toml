@@ -1,0 +1,30 @@
+[package]
+name = "draw-particlefilter-animation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+
+# シミュレータ設定
+sim_config = {"path" = "../sims/sim_example_1", package = "sim_example_1"}
+#sim_config = {"path" = "../sims/sim_opening", package = "sim_opening"}
+#sim_config = {"path" = "../sims/sim_robot", package = "sim_robot"}
+#sim_config = {"path" = "../sims/sim_ffdtm", package = "sim_ffdtm"}
+
+[[example]]
+name = "draw-particlefilter-animation"
+
+
+
+
+
+
+
+
+
