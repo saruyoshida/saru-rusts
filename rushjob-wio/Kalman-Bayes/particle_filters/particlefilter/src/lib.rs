@@ -474,18 +474,26 @@ impl
     a
   }
   // 直距離算出
+  // 20240512 間違ってたので修正
   pub fn multi_norm(
     a: impl Iterator<Item=f32>,
     b: impl Iterator<Item=f32>,
-    d: i32,
-  ) -> f32
+    _d: i32, // 使わねえ
+  ) -> f32 
   {
+   /* 使わねえ
     let df = 1.0 / d as f32;   // 冪乗根用
-
+   */
     a.zip(b)
+    /* 修正
      .map(|(a, b)| (a - b).abs().powi(d))
+    */
+     .map(|(a, b)| (a - b).powi(2))
      .fold(0.0, |x, y| x + y)
+    /* 修正
      .powf(df)
+    */
+     .sqrt()
   }
   // 確率密度関数:正規分布
   pub fn pdf(
