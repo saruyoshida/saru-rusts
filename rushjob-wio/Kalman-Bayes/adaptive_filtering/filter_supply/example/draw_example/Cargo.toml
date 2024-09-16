@@ -1,0 +1,27 @@
+[package]
+name = "draw_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+filter_supply_example = {"path" = "../filter_supply_example"}
+graph_supply_example = {"path" = "../graph_supply_example"}
+
+[[example]]
+name = "draw_example"
+
+
+
+
+
+
+
+
+
+
+

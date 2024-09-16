@@ -1,0 +1,29 @@
+[package]
+name = "draw_adjust_pnoise"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+filter_supply_adjust_pnoise = {"path" = "../filter_supply_adjust_pnoise"}
+graph_supply_adjust_pnoise = {"path" = "../graph_supply_adjust_pnoise"}
+generate_data = {"path" = "../../sims/generate_data"}
+
+[[example]]
+name = "draw_adjust_pnoise"
+
+
+
+
+
+
+
+
+
+
+
+

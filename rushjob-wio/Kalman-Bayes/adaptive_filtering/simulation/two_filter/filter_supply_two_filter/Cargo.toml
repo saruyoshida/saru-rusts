@@ -1,0 +1,15 @@
+[package]
+authors = ["saruyoshida"]
+name = "filter_supply_two_filter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mv_kalmanfilter = {"path" = "../../../filter_supply/multi_variate_filter/mv_kalmanfilter"}
+filter_base = {"path" = "../../../filter_supply/filter_base"}
+nalgebra = { version = "0.33.0", default-features = false, features  =   [  "libm" ]}
+discrete_white_noise = {"path" = "../../../filter_supply/multi_variate_filter/discrete_white_noise"}
+micromath = "2.1.0"
+
+
+

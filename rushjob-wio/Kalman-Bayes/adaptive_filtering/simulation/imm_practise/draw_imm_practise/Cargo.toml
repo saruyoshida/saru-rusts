@@ -1,0 +1,32 @@
+[package]
+name = "draw_imm_practise"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+imm_supply_imm_practise = {"path" = "../imm_supply_imm_practise"}
+graph_supply_imm_practise = {"path" = "../graph_supply_imm_practise"}
+turning_target = {"path" = "../../sims/turning_target"}
+
+[[example]]
+name = "draw_imm_practise"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

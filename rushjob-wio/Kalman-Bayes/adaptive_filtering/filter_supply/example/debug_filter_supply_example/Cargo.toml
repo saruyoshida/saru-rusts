@@ -1,0 +1,13 @@
+[package]
+name = "debug_filter_supply_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+filter_supply_example = {"path" = "../filter_supply_example"}
+micromath = "2.0.0"
+
+[[example]]
+name = "debug_filter_supply_example"
+

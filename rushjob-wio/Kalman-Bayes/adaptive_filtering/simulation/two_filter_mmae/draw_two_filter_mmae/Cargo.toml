@@ -1,0 +1,31 @@
+[package]
+name = "draw_two_filter_mmae"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+micromath = "2.1.0"
+filter_supply_two_filter_mmae = {"path" = "../filter_supply_two_filter_mmae"}
+graph_supply_two_filter_mmae = {"path" = "../graph_supply_two_filter_mmae"}
+generate_data = {"path" = "../../sims/generate_data"}
+
+[[example]]
+name = "draw_two_filter_mmae"
+
+
+
+
+
+
+
+
+
+
+
+
+

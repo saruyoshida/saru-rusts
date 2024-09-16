@@ -1,0 +1,19 @@
+[package]
+name = "draw-generate-data"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+emb_bargraph = {"path" = "../../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../../emb_shapegraph"}
+emb_linegraph = {"path" = "../../../../../emb_linegraph"}
+generate_data = {"path" = "../generate_data"}
+
+[[example]]
+name = "draw-generate-data"
+
+

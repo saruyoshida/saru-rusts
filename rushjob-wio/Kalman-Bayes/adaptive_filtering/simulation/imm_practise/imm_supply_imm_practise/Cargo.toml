@@ -1,0 +1,16 @@
+[package]
+authors = ["saruyoshida"]
+name = "imm_supply_imm_practise"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mv_kalmanfilter = {"path" = "../../../filter_supply/multi_variate_filter/mv_kalmanfilter"}
+filter_base = {"path" = "../../../filter_supply/filter_base"}
+nalgebra = { version = "0.33.0", default-features = false, features  =   [  "libm" ]}
+filter_supply_imm_practise = {"path" = "../filter_supply_imm_practise"}
+imm_estimator = {"path" = "../../../imm_estimator"}
+
+
+
+

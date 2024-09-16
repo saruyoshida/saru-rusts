@@ -1,0 +1,28 @@
+[package]
+name = "draw_adjust_pnoise_std_sdl2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+filter_supply_adjust_pnoise_std = {"path" = "../filter_supply_adjust_pnoise_std"}
+graph_supply_adjust_pnoise_std = {"path" = "../graph_supply_adjust_pnoise_std"}
+generate_data = {"path" = "../../sims/generate_data"}
+
+[[example]]
+name = "draw_adjust_pnoise_std_sdl2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

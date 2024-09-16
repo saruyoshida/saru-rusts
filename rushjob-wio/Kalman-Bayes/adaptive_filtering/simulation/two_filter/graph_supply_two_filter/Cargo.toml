@@ -1,0 +1,12 @@
+[package]
+authors = ["saruyoshida"]
+name = "graph_supply_two_filter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+emb_bargraph = {"path" = "../../../../../emb_bargraph"}
+emb_linegraph = {"path" = "../../../../../emb_linegraph"}
+emb_shapegraph = {"path" = "../../../../../emb_shapegraph"}
+
+

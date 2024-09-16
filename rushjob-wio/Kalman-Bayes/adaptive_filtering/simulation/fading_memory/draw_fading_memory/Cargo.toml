@@ -1,0 +1,29 @@
+[package]
+name = "draw_fading_memory"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.4"
+cortex-m = "0.6"
+cortex-m-rt = { version = "0.6", optional = true }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+filter_supply_fading_memory = {"path" = "../filter_supply_fading_memory"}
+graph_supply_fading_memory = {"path" = "../graph_supply_fading_memory"}
+generate_data = {"path" = "../../sims/generate_data"}
+
+[[example]]
+name = "draw_fading_memory"
+
+
+
+
+
+
+
+
+
+
+
+

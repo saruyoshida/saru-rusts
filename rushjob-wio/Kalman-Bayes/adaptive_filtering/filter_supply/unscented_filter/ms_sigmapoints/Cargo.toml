@@ -1,0 +1,10 @@
+[package]
+authors = ["saruyoshida"]
+name = "ms_sigmapoints"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nalgebra = { version = "0.33.0", default-features = false, features  =   [  "libm" ]}
+micromath = "2.0.0"
+
