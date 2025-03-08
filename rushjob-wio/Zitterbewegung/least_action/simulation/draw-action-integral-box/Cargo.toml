@@ -1,0 +1,32 @@
+[package]
+name = "draw-action-integral-box"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+cortex-m = { version = "0.7.3", features = ["critical-section-single-core"] }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+micromath = "2.0.0"
+graph_supply_action_integral = {"path" = "../graph_supply_action_integral"}
+action_integral_box = {"path" = "../../action_integral_box"}
+
+embedded-alloc = "0.6.0"
+
+[[example]]
+name = "draw-action-integral-box"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

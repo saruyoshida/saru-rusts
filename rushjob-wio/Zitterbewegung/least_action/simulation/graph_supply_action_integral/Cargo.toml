@@ -1,0 +1,11 @@
+[package]
+authors = ["saruyoshida"]
+name = "graph_supply_action_integral"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+
+

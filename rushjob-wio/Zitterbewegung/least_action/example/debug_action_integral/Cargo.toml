@@ -1,0 +1,12 @@
+[package]
+name = "debug_action_integral"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+action_integral = {"path" = "../../action_integral"}
+
+[[example]]
+name = "debug_action_integral"
+
+

@@ -1,0 +1,29 @@
+[package]
+name = "draw-action-integral-struct"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+micromath = "2.0.0"
+graph_supply_action_integral = {"path" = "../graph_supply_action_integral"}
+action_integral_struct = {"path" = "../../action_integral_struct"}
+
+[[example]]
+name = "draw-action-integral-struct"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

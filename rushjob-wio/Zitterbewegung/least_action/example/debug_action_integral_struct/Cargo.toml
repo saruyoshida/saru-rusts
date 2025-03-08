@@ -1,0 +1,12 @@
+[package]
+name = "debug_action_integral_struct"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+action_integral_struct = {"path" = "../../action_integral_struct"}
+
+[[example]]
+name = "debug_action_integral_struct"
+
+

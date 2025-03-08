@@ -1,0 +1,10 @@
+[package]
+authors = ["saruyoshida"]
+name = "action_integral_box"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+
+
