@@ -148,6 +148,12 @@ impl Drawable for EmbLinegraph
        core::i32::MAX {
       return Ok(());
     }
+// 20250331 add start
+    // 前回と同じ描画位置ならスキップ
+    if self.shape_start == self.shape_end {
+      return Ok(());
+    }
+// 20250331 add end
     // 表示枠内チェック&調整
     let mut pstart = self.shape_start.clone();
     let mut pend   = self.shape_end.clone();

@@ -63,7 +63,7 @@ impl WioSBCamera {
       self.projection.into_inner() * 
       (view * self.model).to_homogeneous();
 
-    for mut p in points {
+    for p in points {
       let vertex = 
         mvp *
         Vector4::new(
@@ -93,6 +93,40 @@ impl WioSBCamera {
     (v.x as i32, v.y as i32)
   }
 }
+// 20250402 add start
+impl WioSBCamera {
+  pub fn convertf32(
+    &self,
+    p: (f32, f32, f32),
+  ) -> (f32, f32) {
+    let view = Isometry3::look_at_rh(
+      &self.eye,
+      &self.target, 
+      &Vector3::y()
+    );
+    let mvp = 
+      self.projection.into_inner() * 
+      (view * self.model).to_homogeneous();
+    let vertex = 
+      mvp * Vector4::new(p.0, p.1, p.2, 1.0)
+    ;  
+    self.viewportf32(&vertex)
+  }
+
+  fn viewportf32(
+    &self,
+    vertex: &Vector4<f32>
+  ) -> (f32, f32) {
+    let w = if vertex.w <= 0.0 {
+              0.001
+            } else {
+              vertex.w
+            };
+    let v = self.screen * vertex / w;
+    (v.x, v.y)
+  }
+}
+// 20250402 add end
 
 impl WioSBCamera {
   pub fn set_eye(
