@@ -1,0 +1,31 @@
+[package]
+name = "draw-qms2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+micromath = "2.0.0"
+graph_supply_qm = {"path" = "../../graph_supply_qm"}
+qms = {"path" = "../../../qms"}
+
+[[example]]
+name = "draw-qms2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
