@@ -1,0 +1,16 @@
+[package]
+name = "debug_qm2slit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+qms = {"path" = "../../qms"}
+chrono = "0.4.19"
+
+[[example]]
+name = "debug_qm2slit"
+
+
+
+
+
