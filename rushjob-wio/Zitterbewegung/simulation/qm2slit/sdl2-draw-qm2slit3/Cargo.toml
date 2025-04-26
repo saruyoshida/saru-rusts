@@ -1,0 +1,32 @@
+[package]
+name = "sdl2-draw-qm2slit3"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+graph_supply_qm = {"path" = "../../graph_supply_qm"}
+qms = {"path" = "../../../qms"}
+
+[[example]]
+name = "sdl2-draw-qm2slit3"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
