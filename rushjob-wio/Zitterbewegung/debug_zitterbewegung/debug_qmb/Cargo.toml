@@ -1,0 +1,17 @@
+[package]
+name = "debug_qmb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+qms = {"path" = "../../qms"}
+chrono = "0.4.19"
+
+[[example]]
+name = "debug_qmb"
+
+
+
+
+
+

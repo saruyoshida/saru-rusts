@@ -1,0 +1,117 @@
+#![no_std]
+#![no_main]
+// wio_terminal 0.7.2対応 ---
+use wio_terminal as wio;
+use wio::entry;
+use wio::hal::clock::GenericClockController;
+use wio::hal::delay::Delay;
+use wio::pac::{CorePeripherals, Peripherals};
+use wio::prelude::*;
+// --------------------------
+use panic_halt as _;
+use embedded_graphics::{
+  primitives::{Rectangle,PrimitiveStyle},
+  pixelcolor::Rgb565,
+  prelude::*,
+};
+use num_traits::Float;
+use core::f32::consts::PI;
+
+// 電子の自由運動
+use qms::*;
+// グラフ供給
+use graph_supply_qm::*;
+
+type T = f32;
+#[entry]
+fn main() -> ! {
+  // wio_terminal設定 0.7.2対応-----------
+  let mut peripherals =
+    Peripherals::take().unwrap();
+  let core = CorePeripherals::take().unwrap();
+
+  let mut clocks = GenericClockController
+  ::with_external_32kosc(
+    peripherals.GCLK,
+    &mut peripherals.MCLK,
+    &mut peripherals.OSC32KCTRL,
+    &mut peripherals.OSCCTRL,
+    &mut peripherals.NVMCTRL,
+  );
+  let mut delay = Delay::new(
+    core.SYST, &mut clocks
+  );
+  let sets = wio::Pins::new(
+    peripherals.PORT
+  ).split();
+
+  let (mut display, _backlight) = sets
+    .display
+    .init(
+       &mut clocks,
+       peripherals.SERCOM7,
+       &mut peripherals.MCLK,
+       58.MHz(),
+       &mut delay,
+    )
+    .unwrap();
+  // 画面クリア ---------------------------
+  Rectangle::new(
+    Point::new(0,0), Size::new(320, 240)
+  ).into_styled(
+    PrimitiveStyle::with_fill(Rgb565::BLACK)
+  ).draw(&mut display).unwrap();
+  // グラフ供給 ---------------------------
+  let (mut graph_box, mut graph_obj) =
+    graph_supply(
+       0..300,      // x目盛
+       -120..20,    // y目盛
+       (1000., 100.),  // 補正率
+       (100, 20),   // 目盛刻み
+    );
+  let gb = &mut graph_box[0];
+  let g =  &mut graph_obj[0][0];
+  // 目盛表示
+  gb.mode_scale();
+  gb.draw(&mut display).unwrap();
+  gb.mode_clear();
+  // グラフ立体視化(補正率x,   y,   z)
+  let p3 = Plot3D::new((1000., 100., 40.));
+  p3.draw(&mut display).unwrap();
+  // 結果描画 -----------------------------
+  // 乱数シード値設定
+  let mut seed = 43u8;
+  // バリアー散乱
+  let d = |xt:T, _| {
+    if xt < 0. {
+      // X(t) <  wall の場合
+      // -tan(2X(t)-(3/2)π)
+      -(2.*xt-1.5*PI).tan()
+    } else {
+      // X(t) >= wall の場合
+      // -1/2
+      -0.5
+    }
+  };
+  // 見本経路10本描画
+  (0..10)
+  .map(|z| z as T) 
+  .for_each(|z| {
+    g.reset_data();
+    seed = (seed+43) % 255; // ｼｰﾄﾞ値変更
+    // 電子の自由運動
+    qms2(d, -0.2, 0.01, 30, seed)
+    // 見本経路描画
+    .for_each(|(x, y)| {
+       let (x, y) = p3.conv(
+         x, y, (40.-z*4.)/40.
+       );
+       g.set_data(x, y); 
+       graph_supply_draw!(g, display, Go1,);
+    });
+  });
+  // -------------------------------------
+  #[allow(clippy::empty_loop)]
+  loop {}
+}
+
