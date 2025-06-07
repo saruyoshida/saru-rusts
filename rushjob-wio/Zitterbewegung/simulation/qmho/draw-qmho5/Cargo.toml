@@ -1,0 +1,41 @@
+[package]
+name = "draw-qmho5"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+graph_supply_qm = {"path" = "../../graph_supply_qm"}
+qms = {"path" = "../../../qms"}
+
+[[example]]
+name = "draw-qmho5"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
