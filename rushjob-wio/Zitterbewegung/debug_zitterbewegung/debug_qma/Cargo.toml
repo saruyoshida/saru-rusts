@@ -1,0 +1,16 @@
+[package]
+name = "debug_qma"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+qma = {"path" = "../../qma"}
+chrono = "0.4.19"
+
+[[example]]
+name = "debug_qma"
+
+
+
+
+

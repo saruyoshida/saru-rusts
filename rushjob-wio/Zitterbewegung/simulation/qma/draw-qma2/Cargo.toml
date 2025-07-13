@@ -1,0 +1,39 @@
+[package]
+name = "draw-qma2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+graph_supply_qma = {"path" = "../../graph_supply_qma"}
+qma = {"path" = "../../../qma"}
+
+[[example]]
+name = "draw-qma2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
