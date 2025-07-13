@@ -1,0 +1,14 @@
+[package]
+authors = ["saruyoshida"]
+name = "graph_supply_qma"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+emb_bargraph = {"path" = "../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../emb_shapegraph"}
+wio_sbeye = {"path" = "../../../wio_sbeye"}
+wio_sbcamera = {"path" = "../../../wio_sbcamera"}
+
+
+
