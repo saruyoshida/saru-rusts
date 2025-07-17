@@ -33,6 +33,10 @@ pub struct EmbShapegraph {
   shape_width   : u32,       // 図形線幅
   shape_diameter: u32,       // 図形直径
   data          : (f32, f32),// データ
+// 20250611 add start
+  shape_now     : Point,     // 現在位置
+  shape_old     : Point,     // 前回位置
+// 20250611 add end
 }
 // new
 impl EmbShapegraph {
@@ -52,6 +56,16 @@ impl EmbShapegraph {
       shape_width   : 1,
       shape_diameter: 4,
       data          : (0.0, 0.0),
+// 20250611 add start
+      shape_now     : Point::new(
+                        core::i32::MAX,
+                        core::i32::MAX
+                      ),
+      shape_old     : Point::new(
+                        core::i32::MAX,
+                        core::i32::MAX
+                      ),
+// 20250611 add end
     }
   }
 }
@@ -131,8 +145,38 @@ impl EmbShapegraph {
   ) -> &mut Self
   {
     self.data = (x, y);
+// 20250611 add start
+    self.set_point();
+// 20250611 add end
     self
   }
+// 20250611 add start
+  // 表示ポイント設定
+  fn set_point(&mut self) {
+    core::mem::swap(
+      &mut self.shape_now,
+      &mut self.shape_old,
+    );
+    // サイズ
+    let ysize =
+      (self.data.1 * self.correct_fact.1 -
+       self.correct_shift.1 
+       ) as i32;
+    // 表示ポイント
+    self.shape_now = Point::new(
+      // X
+      self.x_scale_start 
+      + 
+      (self.data.0 * self.correct_fact.0 -
+       self.correct_shift.0
+      ) as i32 
+      -
+      self.bar_width / 2,
+      // Y
+      self.scale_start.y - ysize,
+    );
+  }
+// 20250611 add end
 }
 // 描画
 impl Drawable for EmbShapegraph
@@ -145,28 +189,18 @@ impl Drawable for EmbShapegraph
     where
       D: DrawTarget<Color = Rgb565>,
   { 
-    // サイズ
-    let ysize =
-      (self.data.1 * self.correct_fact.1 -
-       self.correct_shift.1 
-       ) as i32;
-    // 表示ポイント
-    let p = Point::new(
-      // X
-      self.x_scale_start 
-      + 
-      (self.data.0 * self.correct_fact.0 -
-       self.correct_shift.0
-      ) as i32 
-      -
-      self.bar_width / 2,
-      // Y
-      self.scale_start.y - ysize,
-    );
+// 20250611 add start
+    // 前回と同じ描画位置ならスキップ
+    if self.shape_now == self.shape_old {
+      return Ok(());
+    }
+    let p = self.shape_now.clone();
+// 20250611 add end
     // draw領域外チェック
     if !self.draw_area.contains(p) {
       return Ok(());
     }
+
     // 図形表示
     match self.shape_mode {
       ShapeMode::RevTriangle |
