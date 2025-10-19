@@ -1,0 +1,16 @@
+[package]
+authors = ["saruyoshida"]
+name = "emb_arrowgraph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+emb_bargraph = {"path" = "../emb_bargraph"}
+emb_linetrim = {"path" = "../emb_linetrim"}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+
+
+
+
+
