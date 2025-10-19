@@ -1,0 +1,37 @@
+[package]
+name = "sdl2-draw-cavityflow2d"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+graph_supply_quiver2d = {"path" = "../graph_supply_quiver2d"}
+cavityflow2d = {"path" = "../../cavityflow2d"}
+itertools = { version = "0.14.0", default-features = false}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+linspacef32 = {"path" = "../../../../linspacef32"}
+
+[[example]]
+name = "sdl2-draw-cavityflow2d"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
