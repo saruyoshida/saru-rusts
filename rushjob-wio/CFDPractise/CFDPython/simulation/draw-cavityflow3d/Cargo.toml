@@ -1,0 +1,42 @@
+[package]
+name = "draw-cavityflow3d"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wio_terminal = "0.7.2"
+cortex-m = { version = "0.7.3", features = ["critical-section-single-core"] }
+panic-halt = "0.2"
+embedded-graphics = "0.7.1"
+graph_supply_quiver3d = {"path" = "../graph_supply_quiver3d"}
+cavityflow3d = {"path" = "../../cavityflow3d"}
+itertools = { version = "0.14.0", default-features = false}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+linspacef32 = {"path" = "../../../../linspacef32"}
+auto_enums = "0.8"
+embedded-alloc = "0.6.0"
+
+[[example]]
+name = "draw-cavityflow3d"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
