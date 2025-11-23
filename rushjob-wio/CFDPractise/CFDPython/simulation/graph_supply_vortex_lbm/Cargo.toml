@@ -1,0 +1,16 @@
+[package]
+authors = ["saruyoshida"]
+name = "graph_supply_vortex_lbm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_shapegraph = {"path" = "../../../../emb_shapegraph"}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+
+
+
+
+
+
