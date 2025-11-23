@@ -1,0 +1,37 @@
+[package]
+name = "sdl2-draw-vortex_lbm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-graphics = "0.7.1"
+embedded-graphics-simulator = "0.3.0"
+graph_supply_vortex_lbm = {"path" = "../graph_supply_vortex_lbm"}
+vortex_lbm = {"path" = "../../vortex_lbm"}
+itertools = { version = "0.14.0", default-features = false}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+linspacef32 = {"path" = "../../../../linspacef32"}
+
+[[example]]
+name = "sdl2-draw-vortex_lbm"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
