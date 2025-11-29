@@ -1,0 +1,21 @@
+[package]
+authors = ["saruyoshida"]
+name = "graph_supply_vortex_lbm3d"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+emb_bargraph = {"path" = "../../../../emb_bargraph"}
+emb_arrowgraph = {"path" = "../../../../emb_arrowgraph"}
+emb_linegraph = {"path" = "../../../../emb_linegraph"}
+wio_sbeye = {"path" = "../../../../wio_sbeye"}
+wio_sbcamera_ortho = {"path" = "../../../../wio_sbcamera_ortho"}
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+
+
+
+
+
+
+
+
