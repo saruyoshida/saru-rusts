@@ -1,0 +1,21 @@
+[package]
+authors = ["saruyoshida"]
+name = "vortex_lbm3d_sgl"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+num-traits = { version = "0.2", default-features = false, features = ["libm"] }
+ndarray = {version = "0.16.1",default-features = false}
+itertools = { version = "0.14.0", default-features = false}
+ndarray_aulait = {"path" = "../../ndarray_aulait"}
+
+
+
+
+
+
+
+
+
+
